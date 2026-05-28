@@ -148,45 +148,47 @@ export default function Header({
         </div>
 
         {/* DEVELOPER SIMULATOR FOR RBAC */}
-        <div className="relative hidden md:block">
-          <button
-            id="role-simulator-btn"
-            onClick={() => {
-              setShowRoleSelector(!showRoleSelector);
-              setShowCompanySelector(false);
-              setShowNotifications(false);
-            }}
-            className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg border border-indigo-200 dark:border-indigo-950/80 bg-indigo-50/40 dark:bg-indigo-950/15 text-xs font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100/60 dark:hover:bg-indigo-950/30 cursor-pointer transition-all animate-pulse"
-            title="Simulador de Perfil de Acesso (RBAC)"
-          >
-            <ShieldCheck size={14} className="text-indigo-500" />
-            <span>Perfil: {activeRole}</span>
-            <ChevronDown size={12} className="text-slate-400" />
-          </button>
+        {localStorage.getItem('titanx_production_active') !== 'true' && (
+          <div className="relative hidden md:block">
+            <button
+              id="role-simulator-btn"
+              onClick={() => {
+                setShowRoleSelector(!showRoleSelector);
+                setShowCompanySelector(false);
+                setShowNotifications(false);
+              }}
+              className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg border border-indigo-200 dark:border-indigo-950/80 bg-indigo-50/40 dark:bg-indigo-950/15 text-xs font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100/60 dark:hover:bg-indigo-950/30 cursor-pointer transition-all animate-pulse"
+              title="Simulador de Perfil de Acesso (RBAC)"
+            >
+              <ShieldCheck size={14} className="text-indigo-500" />
+              <span>Perfil: {activeRole}</span>
+              <ChevronDown size={12} className="text-slate-400" />
+            </button>
 
-          {showRoleSelector && (
-            <div className="absolute left-0 mt-2 w-56 max-h-96 overflow-y-auto rounded-xl border border-slate-200 dark:border-slate-850 bg-white dark:bg-slate-950 shadow-lg py-1.5 z-50 text-xs shadow-indigo-500/5">
-              <div className="px-3 py-1 border-b border-slate-100 dark:border-slate-900 text-[10px] uppercase font-mono text-slate-400 select-none">
-                Simular Permissões de Cargo
+            {showRoleSelector && (
+              <div className="absolute left-0 mt-2 w-56 max-h-96 overflow-y-auto rounded-xl border border-slate-200 dark:border-slate-850 bg-white dark:bg-slate-950 shadow-lg py-1.5 z-50 text-xs shadow-indigo-500/5">
+                <div className="px-3 py-1 border-b border-slate-100 dark:border-slate-900 text-[10px] uppercase font-mono text-slate-400 select-none">
+                  Simular Permissões de Cargo
+                </div>
+                {roles.map((r) => (
+                  <button
+                    key={r}
+                    onClick={() => {
+                      setActiveRole(r);
+                      setShowRoleSelector(false);
+                    }}
+                    className={`w-full text-left px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-900/80 cursor-pointer flex items-center justify-between ${
+                      activeRole === r ? 'text-indigo-500 font-semibold' : 'text-slate-600 dark:text-slate-400'
+                    }`}
+                  >
+                    <span>{r}</span>
+                    {activeRole === r && <CheckCircle size={12} className="text-indigo-500" />}
+                  </button>
+                ))}
               </div>
-              {roles.map((r) => (
-                <button
-                  key={r}
-                  onClick={() => {
-                    setActiveRole(r);
-                    setShowRoleSelector(false);
-                  }}
-                  className={`w-full text-left px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-900/80 cursor-pointer flex items-center justify-between ${
-                    activeRole === r ? 'text-indigo-500 font-semibold' : 'text-slate-600 dark:text-slate-400'
-                  }`}
-                >
-                  <span>{r}</span>
-                  {activeRole === r && <CheckCircle size={12} className="text-indigo-500" />}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* CENTER: SEARCH BAR */}

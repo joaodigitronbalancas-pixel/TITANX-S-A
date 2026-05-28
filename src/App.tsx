@@ -21,6 +21,7 @@ import TI from './components/TI';
 import Desenvolvimento from './components/Desenvolvimento';
 import DiretoriaGovernanca from './components/DiretoriaGovernanca';
 import InvestAI from './components/InvestAI';
+import CentralUsuarios from './components/CentralUsuarios';
 
 // Elegant Enterprise Skeleton Loading State
 function ModuleLoadingSkeleton() {
@@ -261,6 +262,9 @@ export default function App() {
                   )}
                   {activeModule === 'diretoria' && (
                     <DiretoriaGovernanca searchText={searchText} />
+                  )}
+                  {activeModule === 'usuarios' && (
+                    <CentralUsuarios searchText={searchText} onExport={handleExportSimulation} />
                   )}
                 </>
               )}

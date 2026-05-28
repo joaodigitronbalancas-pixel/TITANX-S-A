@@ -199,6 +199,16 @@ export default function Sidebar({
       allowedRoles: ['Super Admin', 'Desenvolvimento', 'TI'],
       color: 'text-fuchsia-400',
       category: 'Gestão & TI'
+    },
+    {
+      id: 'usuarios',
+      label: 'Central de Usuários',
+      icon: UserCheck,
+      allowedRoles: ['Super Admin', 'Diretoria'],
+      color: 'text-[#00E5FF]',
+      category: 'Gestão & TI',
+      badge: 'PRO ACCESS',
+      badgeCls: 'bg-[#00E5FF]/20 text-[#00E5FF] font-extrabold border border-[#00E5FF]/20'
     }
   ];
 
