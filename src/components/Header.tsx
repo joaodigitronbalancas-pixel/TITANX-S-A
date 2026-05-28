@@ -94,7 +94,9 @@ export default function Header({
   ];
 
   return (
-    <header className="h-16 shrink-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800/80 px-4 flex items-center justify-between z-10 shadow-sm transition-all">
+    <header className="h-16 shrink-0 bg-[#020512]/90 backdrop-blur-md border-b border-[#00E5FF]/15 px-4 flex items-center justify-between z-10 transition-all select-none relative">
+      <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/25 to-transparent pointer-events-none" />
+
       {/* LEFT SECTION: TOGGLE & COMPANAY */}
       <div className="flex items-center gap-3">
         <button

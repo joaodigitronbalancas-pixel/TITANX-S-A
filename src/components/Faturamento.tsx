@@ -118,7 +118,7 @@ export default function Faturamento({ searchText, onExport }: FaturamentoProps) 
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* INVOICES TABLE PANEL */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl shadow-sm p-5 col-span-2 space-y-4">
+        <div className="glass-card p-5 col-span-2 space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-bold text-slate-850 dark:text-slate-200 flex items-center gap-1.5 animate-pulse">
               <Receipt size={16} className="text-purple-500" /> Histórico Fiscal de Notas Emitidas
@@ -198,7 +198,8 @@ export default function Faturamento({ searchText, onExport }: FaturamentoProps) 
         </div>
 
         {/* SIDE BAR TAX CALCULATOR SIMULATOR */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl shadow-sm p-5 space-y-4">
+        <div className="glass-card hover:border-purple-500/40 hover:glow-purple p-5 space-y-4 transition-all duration-300 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 h-16 w-16 bg-purple-500/5 blur-xl rounded-full" />
           <div className="flex items-center gap-1.5 border-b border-slate-100 dark:border-slate-800 pb-3">
             <Calculator size={16} className="text-sky-500" />
             <h3 className="text-sm font-bold text-slate-850 dark:text-slate-200">

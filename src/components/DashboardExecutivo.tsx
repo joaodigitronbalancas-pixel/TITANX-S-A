@@ -306,20 +306,21 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
                 {/* CARD 1: Revenue or MRR */}
                 <div 
                   onClick={() => setSelectedKpiDetail('revenue')}
-                  className="bg-gradient-to-br from-indigo-950/20 via-slate-900 to-indigo-950/10 border border-slate-800 p-5 rounded-2xl hover:border-indigo-500/50 transition-all hover:scale-[1.01] cursor-pointer relative group flex justify-between items-center overflow-hidden"
+                  className="glass-card p-5 rounded-2xl hover:border-[#00E5FF]/60 hover:glow-cyan transition-all hover:scale-[1.02] cursor-pointer relative group flex justify-between items-center overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 h-16 w-16 bg-indigo-500/5 group-hover:bg-indigo-500/10 blur-xl rounded-full" />
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block">FATURAMENTO CONSOLIDADO</span>
+                  <div className="absolute top-0 right-0 h-16 w-16 bg-gradient-to-br from-[#00E5FF]/10 to-indigo-500/10 blur-xl rounded-full" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#00E5FF] to-transparent opacity-30" />
+                  <div className="space-y-1 z-10">
+                    <span className="text-[10px] font-mono font-black text-slate-400 uppercase tracking-widest block">FATURAMENTO CONSOLIDADO</span>
                     <h3 className="text-2xl font-black text-white font-sans tracking-tight">
                       R$ {dynamicMetrics.faturamento.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </h3>
                     <div className="flex items-center gap-1.5 text-xs text-emerald-400 mt-1">
                       <TrendingUp size={13} />
-                      <span className="font-mono bg-emerald-500/10 px-1 py-0.2 rounded font-bold">+18.4% YoY</span>
+                      <span className="font-mono bg-emerald-500/15 border border-emerald-500/20 px-1.5 py-0.5 rounded font-bold text-[10px]">+18.4% YoY</span>
                     </div>
                   </div>
-                  <div className="p-3 bg-indigo-500/15 text-[#00E5FF] border border-indigo-500/20 rounded-xl group-hover:scale-110 transition-all">
+                  <div className="p-3 bg-gradient-to-br from-[#00E5FF]/20 to-indigo-950/40 text-[#00E5FF] border border-[#00E5FF]/20 rounded-xl group-hover:scale-110 transition-all z-10 shadow-[0_0_15px_rgba(0,E5,FF,0.15)]">
                     <DollarSign size={20} />
                   </div>
                 </div>
@@ -327,11 +328,12 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
                 {/* CARD 2: Sales or CAC/LTV */}
                 <div 
                   onClick={() => setSelectedKpiDetail(selectedView === 'cfo' ? 'mrr' : 'industrial')}
-                  className="bg-gradient-to-br from-indigo-950/20 via-slate-900 to-indigo-950/10 border border-slate-800 p-5 rounded-2xl hover:border-[#00E5FF]/50 transition-all hover:scale-[1.01] cursor-pointer relative group flex justify-between items-center overflow-hidden"
+                  className="glass-card p-5 rounded-2xl hover:border-cyan-500/60 hover:glow-cyan transition-all hover:scale-[1.02] cursor-pointer relative group flex justify-between items-center overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 h-16 w-16 bg-[#00E5FF]/5 group-hover:bg-[#00E5FF]/10 blur-xl rounded-full" />
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block">
+                  <div className="absolute top-0 right-0 h-16 w-16 bg-gradient-to-br from-cyan-500/10 to-transparent blur-xl rounded-full" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent opacity-30" />
+                  <div className="space-y-1 z-10">
+                    <span className="text-[10px] font-mono font-black text-slate-400 uppercase tracking-widest block">
                       {selectedView === 'cfo' ? 'RECEITA RECORRENTE (MRR)' : 'CUSTO OPERACIONAL INDUSTRIAL'}
                     </span>
                     <h3 className="text-2xl font-black text-white font-sans tracking-tight">
@@ -342,10 +344,10 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
                     </h3>
                     <div className="flex items-center gap-1.5 text-xs text-sky-400 mt-1">
                       <TrendingUp size={13} />
-                      <span className="font-mono bg-sky-500/10 px-1 py-0.2 rounded font-semibold">-3% Meta Despesa</span>
+                      <span className="font-mono bg-sky-500/15 border border-sky-550/20 px-1.5 py-0.5 rounded font-bold text-[10px]">-3% Meta Despesa</span>
                     </div>
                   </div>
-                  <div className="p-3 bg-sky-500/15 text-sky-400 border border-sky-500/20 rounded-xl group-hover:scale-110 transition-all">
+                  <div className="p-3 bg-gradient-to-br from-sky-500/20 to-indigo-950/40 text-sky-400 border border-sky-500/20 rounded-xl group-hover:scale-110 transition-all z-10">
                     {selectedView === 'cfo' ? <BarChart3 size={20} /> : <ShoppingCart size={20} />}
                   </div>
                 </div>
@@ -353,11 +355,12 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
                 {/* CARD 3: Employees or LTV/CAC */}
                 <div 
                   onClick={() => setSelectedKpiDetail('talent')}
-                  className="bg-gradient-to-br from-indigo-950/20 via-slate-900 to-indigo-950/10 border border-slate-800 p-5 rounded-2xl hover:border-purple-500/50 transition-all hover:scale-[1.01] cursor-pointer relative group flex justify-between items-center overflow-hidden"
+                  className="glass-card p-5 rounded-2xl hover:border-purple-500/60 hover:glow-purple transition-all hover:scale-[1.02] cursor-pointer relative group flex justify-between items-center overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 h-16 w-16 bg-purple-500/5 group-hover:bg-purple-500/10 blur-xl rounded-full" />
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block">
+                  <div className="absolute top-0 right-0 h-16 w-16 bg-gradient-to-br from-purple-500/10 to-transparent blur-xl rounded-full" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-400 to-transparent opacity-30" />
+                  <div className="space-y-1 z-10">
+                    <span className="text-[10px] font-mono font-black text-slate-400 uppercase tracking-widest block">
                       {selectedView === 'cfo' ? 'INDICE LTV : CAC RATIO' : 'CAPACIDADE OPERACIONAL TALENTOS'}
                     </span>
                     <h3 className="text-2xl font-black text-white font-sans tracking-tight">
@@ -368,10 +371,10 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
                     </h3>
                     <div className="flex items-center gap-1.5 text-xs text-purple-400 mt-1">
                       <Activity size={13} />
-                      <span className="font-mono bg-purple-500/10 px-1 py-0.2 rounded font-bold">LTV R$ {dynamicMetrics.ltv.toLocaleString()}</span>
+                      <span className="font-mono bg-purple-500/15 border border-purple-500/20 px-1.5 py-0.5 rounded font-bold text-[10px]">LTV R$ {dynamicMetrics.ltv.toLocaleString()}</span>
                     </div>
                   </div>
-                  <div className="p-3 bg-purple-500/15 text-purple-400 border border-purple-500/20 rounded-xl group-hover:scale-110 transition-all">
+                  <div className="p-3 bg-gradient-to-br from-purple-500/20 to-indigo-950/40 text-purple-400 border border-purple-500/20 rounded-xl group-hover:scale-110 transition-all z-10">
                     <Users2 size={20} />
                   </div>
                 </div>
@@ -379,11 +382,12 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
                 {/* CARD 4: Efficiency or SLA */}
                 <div 
                   onClick={() => setSelectedKpiDetail('efficiency')}
-                  className="bg-gradient-to-br from-indigo-950/20 via-slate-900 to-indigo-950/10 border border-slate-800 p-5 rounded-2xl hover:border-emerald-500/50 transition-all hover:scale-[1.01] cursor-pointer relative group flex justify-between items-center overflow-hidden"
+                  className="glass-card p-5 rounded-2xl hover:border-emerald-500/60 hover:glow-emerald transition-all hover:scale-[1.02] cursor-pointer relative group flex justify-between items-center overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 h-16 w-16 bg-emerald-500/5 group-hover:bg-emerald-500/10 blur-xl rounded-full" />
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block">
+                  <div className="absolute top-0 right-0 h-16 w-16 bg-gradient-to-br from-emerald-500/10 to-transparent blur-xl rounded-full" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-emerald-400 to-transparent opacity-30" />
+                  <div className="space-y-1 z-10">
+                    <span className="text-[10px] font-mono font-black text-slate-400 uppercase tracking-widest block">
                       {selectedView === 'coo' ? 'COMPLIANCE SLA OPERACIONAL' : 'EFICIENCIA GERAL DE PLANTA (OEE)'}
                     </span>
                     <h3 className="text-2xl font-black text-white font-sans tracking-tight">
@@ -391,10 +395,10 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
                     </h3>
                     <div className="flex items-center gap-1.5 text-xs text-emerald-400 mt-1">
                       <TrendingUp size={13} />
-                      <span className="font-mono bg-emerald-500/10 px-1 py-0.2 rounded font-semibold">+1.1% v3</span>
+                      <span className="font-mono bg-emerald-500/15 border border-emerald-500/20 px-1.5 py-0.5 rounded font-bold text-[10px]">+1.1% v3</span>
                     </div>
                   </div>
-                  <div className="p-3 bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 rounded-xl group-hover:scale-110 transition-all">
+                  <div className="p-3 bg-gradient-to-br from-emerald-500/20 to-indigo-950/40 text-emerald-400 border border-emerald-500/20 rounded-xl group-hover:scale-110 transition-all z-10">
                     <Award size={20} />
                   </div>
                 </div>
@@ -412,7 +416,7 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
             <div key="mainGrid" className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               
               {/* INTERACTIVE DYNAMIC CHART PANEL */}
-              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-sm col-span-2 space-y-4">
+              <div className="glass-card p-6 shadow-sm col-span-2 space-y-4">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-3 border-b border-slate-850 pb-4">
                   <div>
                     <h3 className="text-sm font-black text-white flex items-center gap-2">
@@ -526,7 +530,7 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
               </div>
 
               {/* CO-PILOT ADVISOR IN REAL-TIME (TITANX CORE-AI) */}
-              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4 relative flex flex-col justify-between overflow-hidden">
+              <div className="glass-card hover:border-purple-500/50 hover:glow-purple p-5 shadow-sm space-y-4 relative flex flex-col justify-between overflow-hidden transition-all duration-300">
                 <div className="absolute top-0 right-0 h-24 w-24 bg-purple-500/10 blur-xl rounded-full" />
                 
                 <div className="space-y-3">
@@ -627,7 +631,7 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
             <div key="approvals" className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               
               {/* WORKFLOW DE APROVAÇÕES DO DIRETOR */}
-              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-sm col-span-2 space-y-4">
+              <div className="glass-card p-6 shadow-sm col-span-2 space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-850 pb-4">
                   <div>
                     <h3 className="text-sm font-black text-white flex items-center gap-2">
@@ -699,7 +703,7 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
               </div>
 
               {/* TEAMS RANKINGS & PERFORMANCE */}
-              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+              <div className="glass-card hover:border-cyan-500/30 p-5 shadow-sm space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-850 pb-2">
                   <h4 className="text-xs font-black text-white tracking-wider flex items-center gap-1.5 uppercase">
                     🏆 Ranking de Performance Comercial & Industrial
@@ -760,7 +764,7 @@ export default function DashboardExecutivo({ searchText, onExport }: DashboardEx
         // -----------------------------------------------------
         if (sectionId === 'strategic') {
           return (
-            <div key="strategic" className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+            <div key="strategic" className="glass-card hover:border-[#00E5FF]/30 p-6 shadow-sm space-y-4 transition-all duration-300">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-850 pb-4">
                 <div>
                   <h3 className="text-sm font-black text-white flex items-center gap-1.5">

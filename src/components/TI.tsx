@@ -107,7 +107,7 @@ export default function TI({ searchText, onExport }: TIProps) {
       </div>
 
       {/* CORE DISPLAY MULTI-TABS CONTAINER */}
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl shadow-sm overflow-hidden min-h-[400px]">
+      <div className="glass-card shadow-sm overflow-hidden min-h-[400px]">
         {/* TABS HEAD */}
         <div className="flex border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/20 px-3 py-2 text-xs font-semibold gap-2">
           <button

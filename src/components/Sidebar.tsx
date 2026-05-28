@@ -23,7 +23,9 @@ import {
   ChevronDown,
   Bell,
   Sparkles,
-  GripVertical
+  GripVertical,
+  Coins,
+  TrendingUp
 } from 'lucide-react';
 import { UserRole } from '../types';
 
@@ -97,6 +99,16 @@ export default function Sidebar({
       category: 'Finanças & Fiscal',
       badge: '98.8%',
       badgeCls: 'bg-emerald-500/20 text-emerald-300'
+    },
+    {
+      id: 'invest_ai',
+      label: 'TITANX INVEST AI',
+      icon: Coins,
+      allowedRoles: ['Super Admin', 'Diretoria', 'Financeiro', 'RH', 'Comercial', 'Marketing', 'Logística', 'Industrial', 'Produção', 'TI', 'Desenvolvimento', 'Projetos', 'Usuário Comum'],
+      color: 'text-cyan-400',
+      category: 'Finanças & Fiscal',
+      badge: 'PRO AI',
+      badgeCls: 'bg-cyan-500/20 text-cyan-300 animate-pulse border border-cyan-500/30 font-black'
     },
     {
       id: 'faturamento',
@@ -223,10 +235,12 @@ export default function Sidebar({
   return (
     <aside
       id="titanx-sidebar"
-      className={`relative flex flex-col bg-slate-900 border-r border-[#00E5FF]/10 text-slate-100 transition-all duration-300 select-none ${
+      className={`relative flex flex-col bg-[#030712] border-r border-[#00E5FF]/15 text-slate-100 transition-all duration-300 select-none ${
         collapsed ? 'w-20' : 'w-72'
-      } h-screen shadow-2xl z-20`}
+      } h-screen shadow-[5px_0_30px_rgba(3,7,18,0.95)] z-20`}
     >
+      <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-[#00E5FF]/20 to-transparent pointer-events-none" />
+
       
       {/* BRAND HEADER BANNER */}
       <div className="flex h-16 items-center justify-between px-4 border-b border-slate-800 bg-slate-950/40">
@@ -330,12 +344,16 @@ export default function Sidebar({
                       <div
                         key={item.id}
                         onClick={() => setActiveModule(item.id)}
-                        className={`w-full flex items-center justify-between rounded-xl py-2 px-3 transition-all cursor-pointer group ${
+                        className={`w-full flex items-center justify-between rounded-xl py-2 px-3 transition-all cursor-pointer relative overflow-hidden group ${
                           isActive
-                            ? 'bg-gradient-to-tr from-[#00E5FF]/10 to-indigo-950/40 border border-[#00E5FF]/20 text-white shadow-inner bg-indigo-950/10'
-                            : 'text-slate-400 hover:text-white hover:bg-slate-950/30 border border-transparent'
+                            ? 'bg-gradient-to-r from-[#00E5FF]/15 via-indigo-950/20 to-transparent border border-[#00E5FF]/25 text-white font-bold glow-cyan/10'
+                            : 'text-slate-400 hover:text-white hover:bg-slate-900/40 border border-transparent hover:border-slate-800/50'
                         }`}
                       >
+                        {isActive && (
+                          <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#00E5FF] shadow-[0_0_10px_#00E5FF]" />
+                        )}
+
                         <div className="flex items-center gap-2.5 min-w-0 flex-1">
                           <Icon size={16} className={`shrink-0 ${isActive ? item.color : 'text-slate-400 group-hover:scale-105 transition-transform'}`} />
                           {!collapsed && (

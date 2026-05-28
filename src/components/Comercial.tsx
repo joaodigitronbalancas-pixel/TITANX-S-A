@@ -124,47 +124,50 @@ export default function Comercial({ searchText, onExport }: ComercialProps) {
       {/* KPIS PANELS */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* PIPELINE TOTAL */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-800/80 rounded-xl p-4 shadow-sm flex items-center justify-between">
-          <div className="space-y-1">
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider font-mono">Volumetria Pipeline CRM</span>
-            <div className="text-lg font-bold text-pink-500 font-mono">
+        <div className="glass-card hover:border-pink-500/45 hover:glow-purple rounded-xl p-4 shadow-sm flex items-center justify-between relative overflow-hidden group transition-all duration-300">
+          <div className="absolute top-0 right-0 h-12 w-12 bg-pink-500/5 blur-lg rounded-full" />
+          <div className="space-y-1 z-10">
+            <span className="text-[10px] text-slate-400 uppercase font-extrabold tracking-wider font-mono">Volumetria Pipeline CRM</span>
+            <div className="text-lg font-black text-pink-400 font-mono">
               R$ {pipelineValue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
             </div>
           </div>
-          <div className="p-3 bg-pink-500/10 text-pink-500 rounded-lg">
+          <div className="p-3 bg-pink-500/15 text-pink-400 border border-pink-500/20 rounded-xl group-hover:scale-105 transition-all z-10">
             <TrendingUp size={18} />
           </div>
         </div>
 
         {/* NEGOCIOS ATIVOS */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-800/80 rounded-xl p-4 shadow-sm flex items-center justify-between">
-          <div className="space-y-1">
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider font-mono">Leads em Negociação</span>
-            <div className="text-lg font-bold text-slate-850 dark:text-white font-mono">
+        <div className="glass-card hover:border-cyan-500/40 hover:glow-cyan rounded-xl p-4 shadow-sm flex items-center justify-between relative overflow-hidden group transition-all duration-300">
+          <div className="absolute top-0 right-0 h-12 w-12 bg-indigo-500/5 blur-lg rounded-full" />
+          <div className="space-y-1 z-10">
+            <span className="text-[10px] text-slate-400 uppercase font-extrabold tracking-wider font-mono">Leads em Negociação</span>
+            <div className="text-lg font-black text-white font-mono">
               {leads.filter(l => l.status === 'Em Negociação' || l.status === 'Proposta Enviada').length} Ativos
             </div>
           </div>
-          <div className="p-3 bg-indigo-500/10 text-indigo-500 rounded-lg">
+          <div className="p-3 bg-indigo-500/15 text-[#00E5FF] border border-[#00E5FF]/20 rounded-xl group-hover:scale-105 transition-all z-10">
             <Users size={18} />
           </div>
         </div>
 
         {/* VALOR DE CONTRATOS */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-800/80 rounded-xl p-4 shadow-sm flex items-center justify-between">
-          <div className="space-y-1">
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider font-mono">Receita Recorrente Contratada</span>
-            <div className="text-lg font-bold text-emerald-500 font-mono">
+        <div className="glass-card hover:border-emerald-500/40 hover:glow-emerald rounded-xl p-4 shadow-sm flex items-center justify-between relative overflow-hidden group transition-all duration-300">
+          <div className="absolute top-0 right-0 h-12 w-12 bg-emerald-500/5 blur-lg rounded-full" />
+          <div className="space-y-1 z-10">
+            <span className="text-[10px] text-slate-400 uppercase font-extrabold tracking-wider font-mono">Receita Recorrente Contratada</span>
+            <div className="text-lg font-black text-emerald-400 font-mono">
               R$ {contracts.reduce((acc, curr) => acc + curr.value, 0).toLocaleString('pt-BR')}
             </div>
           </div>
-          <div className="p-3 bg-emerald-500/10 text-emerald-500 rounded-lg">
+          <div className="p-3 bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 rounded-xl group-hover:scale-105 transition-all z-10">
             <Briefcase size={18} />
           </div>
         </div>
       </div>
 
       {/* CORE SUBTABS CONTROLLER */}
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm overflow-hidden min-h-[400px]">
+      <div className="glass-card overflow-hidden min-h-[400px]">
         {/* SWITCH TABS */}
         <div className="flex border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/20 px-3 py-2 text-xs font-semibold gap-2">
           <button

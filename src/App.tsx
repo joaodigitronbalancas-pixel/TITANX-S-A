@@ -20,6 +20,7 @@ import Projetos from './components/Projetos';
 import TI from './components/TI';
 import Desenvolvimento from './components/Desenvolvimento';
 import DiretoriaGovernanca from './components/DiretoriaGovernanca';
+import InvestAI from './components/InvestAI';
 
 // Elegant Enterprise Skeleton Loading State
 function ModuleLoadingSkeleton() {
@@ -176,11 +177,13 @@ export default function App() {
   }
 
   return (
-    <div className={`min-h-screen font-sans transition-colors duration-200 ${
-      theme === 'dark' ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-850'
+    <div className={`min-h-screen font-sans transition-all duration-300 ${
+      theme === 'dark' ? 'bg-[#020512] text-[#f1f5f9]' : 'bg-[#fafafa] text-[#1e293b]'
     }`}>
       {/* GLOBAL BACKGROUND ELEMENTS (High style premium decor) */}
-      <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-[#00E5FF]/2 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-[20%] right-0 h-[500px] bg-gradient-to-tr from-[#a855f7]/5 via-[#00E5FF]/5 to-transparent blur-[120px] pointer-events-none" />
+      <div className="absolute top-[30%] left-[-100px] h-[350px] w-[350px] bg-cyan-500/5 blur-[100px] pointer-events-none rounded-full" />
+
 
       {/* RENDER VIEW LAYOUT */}
       <div className="flex h-screen overflow-hidden relative">
@@ -219,6 +222,9 @@ export default function App() {
                   {/* RENDER BY SELECTED MODULE */}
                   {activeModule === 'dashboard' && (
                     <DashboardExecutivo searchText={searchText} onExport={handleExportSimulation} />
+                  )}
+                  {activeModule === 'invest_ai' && (
+                    <InvestAI searchText={searchText} onExport={handleExportSimulation} />
                   )}
                   {activeModule === 'logistica' && (
                     <Logistica searchText={searchText} onExport={handleExportSimulation} />

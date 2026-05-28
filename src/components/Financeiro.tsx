@@ -115,47 +115,50 @@ export default function Financeiro({ searchText, onExport }: FinanceiroProps) {
       {/* METRIC CARDS BANNER */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* RECEITAS */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-800/80 rounded-xl p-4 shadow-sm flex items-center justify-between">
-          <div className="space-y-1">
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider font-mono">Entradas Consolidadas</span>
-            <div className="text-lg font-bold text-emerald-500 font-mono">
+        <div className="glass-card hover:border-emerald-500/40 hover:glow-emerald rounded-xl p-4 shadow-sm flex items-center justify-between relative overflow-hidden group transition-all duration-300">
+          <div className="absolute top-0 right-0 h-12 w-12 bg-emerald-500/5 blur-lg rounded-full" />
+          <div className="space-y-1 z-10">
+            <span className="text-[10px] text-slate-400 uppercase font-extrabold tracking-wider font-mono">Entradas Consolidadas</span>
+            <div className="text-lg font-black text-emerald-400 font-mono">
               R$ {totalReceitas.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
             </div>
           </div>
-          <div className="p-3 bg-emerald-500/10 text-emerald-500 rounded-lg">
+          <div className="p-3 bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 rounded-xl group-hover:scale-105 transition-all z-10">
             <ArrowDownLeft size={18} />
           </div>
         </div>
 
         {/* DESPESAS */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-800/80 rounded-xl p-4 shadow-sm flex items-center justify-between">
-          <div className="space-y-1">
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider font-mono">Saídas Liquidadas</span>
-            <div className="text-lg font-bold text-rose-500 font-mono">
+        <div className="glass-card hover:border-rose-500/40 hover:glow-purple rounded-xl p-4 shadow-sm flex items-center justify-between relative overflow-hidden group transition-all duration-300">
+          <div className="absolute top-0 right-0 h-12 w-12 bg-rose-500/5 blur-lg rounded-full" />
+          <div className="space-y-1 z-10">
+            <span className="text-[10px] text-slate-400 uppercase font-extrabold tracking-wider font-mono">Saídas Liquidadas</span>
+            <div className="text-lg font-black text-rose-400 font-mono">
               R$ {totalDespesas.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
             </div>
           </div>
-          <div className="p-3 bg-rose-500/10 text-rose-500 rounded-lg">
+          <div className="p-3 bg-rose-500/15 text-rose-400 border border-rose-500/20 rounded-xl group-hover:scale-105 transition-all z-10">
             <ArrowUpRight size={18} />
           </div>
         </div>
 
         {/* SALDO OPERACIONAL */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-800/80 rounded-xl p-4 shadow-sm flex items-center justify-between border-l-4 border-l-sky-500">
-          <div className="space-y-1">
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider font-mono">Saldo em Caixa Ativo</span>
-            <div className="text-lg font-bold text-sky-500 font-mono">
+        <div className="glass-card hover:border-cyan-500/40 hover:glow-cyan rounded-xl p-4 shadow-sm flex items-center justify-between border-l-4 border-l-cyan-500 relative overflow-hidden group transition-all duration-300">
+          <div className="absolute top-0 right-0 h-12 w-12 bg-[#00E5FF]/5 blur-lg rounded-full" />
+          <div className="space-y-1 z-10">
+            <span className="text-[10px] text-slate-400 uppercase font-extrabold tracking-wider font-mono">Saldo em Caixa Ativo</span>
+            <div className="text-lg font-black text-cyan-400 font-mono font-sans">
               R$ {saldoLiquido.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
             </div>
           </div>
-          <div className="p-3 bg-sky-500/10 text-sky-500 rounded-lg">
+          <div className="p-3 bg-[#00E5FF]/15 text-[#00E5FF] border border-[#00E5FF]/20 rounded-xl group-hover:scale-105 transition-all z-10 shadow-[0_0_10px_rgba(0,229,255,0.1)]">
             <Wallet size={18} />
           </div>
         </div>
       </div>
 
       {/* TABS CONTAINER */}
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl shadow-sm overflow-hidden min-h-[400px]">
+      <div className="glass-card overflow-hidden min-h-[400px]">
         {/* HEADER SELECTS */}
         <div className="flex border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/20 px-3 py-2 text-xs font-semibold gap-2">
           <button
