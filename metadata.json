@@ -1,0 +1,6 @@
+{
+  "name": "TITANX ERP CORPORATE",
+  "description": "Enterprise Resource Planning (ERP) de alto padrão com governança corporativa, gestão de riscos de nível global, inteligência de negócios, financeiro, industrial e analítico integrado.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
